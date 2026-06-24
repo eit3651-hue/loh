@@ -1,0 +1,1076 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kenali Pencemaran Alam Sekitar</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts (Fredoka for kid-friendly rounded style) -->
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Nunito', 'sans-serif'],
+                        fredoka: ['Fredoka', 'sans-serif'],
+                    },
+                    colors: {
+                        natureGreen: '#4ade80',
+                        skyBlue: '#38bdf8',
+                        earthBrown: '#a78bfa',
+                        coralPink: '#fb7185',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Nunito', sans-serif;
+            background: linear-gradient(135deg, #f0fdf4 0%, #ecfeff 100%);
+            min-height: 100vh;
+        }
+        .font-fredoka {
+            font-family: 'Fredoka', sans-serif;
+        }
+        /* Custom scrollbar for friendly look */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f5f9;
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #94a3b8;
+        }
+        /* Soft pulsing animation for buttons */
+        @keyframes gentlePulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+        .pulse-btn {
+            animation: gentlePulse 2s infinite ease-in-out;
+        }
+        /* Float animation for mascot */
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-10px) rotate(2deg); }
+        }
+        .float-animation {
+            animation: float 4s infinite ease-in-out;
+        }
+    </style>
+</head>
+<body class="flex flex-col justify-between overflow-x-hidden">
+
+    <!-- TOP HEADER / NAV BAR -->
+    <header class="bg-white/80 backdrop-blur-md border-b-2 border-green-100 py-3 px-6 sticky top-0 z-50 shadow-sm">
+        <div class="max-w-6xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-3">
+            <div class="flex items-center gap-3">
+                <span class="text-3xl">🐢</span>
+                <div>
+                    <h1 class="font-fredoka text-xl sm:text-2xl text-green-700 font-bold leading-tight">Kenali Pencemaran Alam Sekitar</h1>
+                    <p class="text-xs text-gray-500">Peta i-Think & Bulatan Soalan Interaktif</p>
+                </div>
+            </div>
+            
+            <!-- Quick Slide Navigation Dots -->
+            <div class="flex items-center gap-2">
+                <button onclick="goToSlide(1)" id="dot-1" class="w-8 h-8 rounded-full font-fredoka flex items-center justify-center text-sm font-bold transition-all duration-300 bg-green-500 text-white shadow-md">1</button>
+                <div class="w-6 h-0.5 bg-gray-200"></div>
+                <button onclick="goToSlide(2)" id="dot-2" class="w-8 h-8 rounded-full font-fredoka flex items-center justify-center text-sm font-bold transition-all duration-300 bg-gray-100 text-gray-600 hover:bg-green-100">2</button>
+                <div class="w-6 h-0.5 bg-gray-200"></div>
+                <button onclick="goToSlide(3)" id="dot-3" class="w-8 h-8 rounded-full font-fredoka flex items-center justify-center text-sm font-bold transition-all duration-300 bg-gray-100 text-gray-600 hover:bg-green-100">3</button>
+                <div class="w-6 h-0.5 bg-gray-200"></div>
+                <button onclick="goToSlide(4)" id="dot-4" class="w-8 h-8 rounded-full font-fredoka flex items-center justify-center text-sm font-bold transition-all duration-300 bg-gray-100 text-gray-600 hover:bg-green-100">4</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- MAIN INTERACTIVE CONTAINER -->
+    <main class="flex-grow max-w-6xl w-full mx-auto p-4 sm:p-6 flex items-center justify-center">
+        
+        <!-- ================= SLIDE 1: PENGAN TAR / HOME ================= -->
+        <section id="slide-1" class="w-full bg-white rounded-3xl p-6 sm:p-10 shadow-xl border-4 border-green-200 flex flex-col md:flex-row items-center gap-8 transition-all duration-500">
+            <div class="w-full md:w-1/2 flex flex-col justify-center text-center md:text-left">
+                <span class="inline-block px-4 py-1.5 bg-green-100 text-green-700 font-bold rounded-full text-sm font-fredoka w-fit mx-auto md:mx-0 mb-4">
+                    Mari Belajar Bersama!
+                </span>
+                <h2 class="font-fredoka text-4xl sm:text-5xl text-green-800 font-bold mb-4 leading-tight">
+                    Sila Selamatkan Bumi Kita! 🌍
+                </h2>
+                <p class="text-gray-600 text-base sm:text-lg mb-6 leading-relaxed">
+                    Hai kawan-kawan! Saya <strong>Cikgu Penyu</strong>. Hari ini kita akan menerokai jenis-jenis pencemaran alam sekitar menggunakan <strong>Peta Pokok i-Think</strong> dan membuat refleksi hebat dengan <strong>Bulatan Soalan</strong>. Sedia untuk menjadi Hero Bumi? Let's go!
+                </p>
+                
+                <button onclick="goToSlide(2)" class="pulse-btn bg-green-500 hover:bg-green-600 text-white font-fredoka text-xl px-8 py-4 rounded-2xl shadow-lg hover:shadow-xl transition-all flex items-center justify-center gap-3 w-full sm:w-fit">
+                    Mula Meneroka <i class="fa-solid fa-arrow-right"></i>
+                </button>
+            </div>
+            
+            <div class="w-full md:w-1/2 flex justify-center items-center relative">
+                <!-- Decorative BG Shapes -->
+                <div class="absolute w-72 h-72 bg-emerald-100 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob"></div>
+                <div class="absolute w-72 h-72 bg-sky-100 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-2000 -right-4"></div>
+                
+                <!-- Mascot & Earth Graphic -->
+                <div class="relative float-animation flex flex-col items-center">
+                    <!-- Cute SVG Earth -->
+                    <svg class="w-64 h-64 sm:w-80 sm:h-80" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="100" cy="100" r="80" fill="#38bdf8"/>
+                        <!-- Green Continents -->
+                        <path d="M60 50C45 60 40 80 45 100C50 120 70 130 90 125C110 120 120 140 135 145C150 150 160 130 165 110C170 90 150 70 140 60C130 50 110 45 90 55C80 60 70 45 60 50Z" fill="#4ade80"/>
+                        <path d="M110 110C115 105 125 105 130 110C135 115 130 125 120 125C110 125 105 115 110 110Z" fill="#4ade80"/>
+                        <!-- Sparkles -->
+                        <circle cx="50" cy="40" r="4" fill="white" />
+                        <circle cx="150" cy="160" r="6" fill="white" opacity="0.8"/>
+                    </svg>
+                    
+                    <!-- Cute Floating Mascot Speech Bubble -->
+                    <div class="absolute -top-6 -right-6 bg-yellow-100 border-2 border-yellow-400 p-3 rounded-2xl shadow-md text-xs font-bold text-yellow-800 max-w-[150px] rotate-6">
+                        "Bumi kita sedang bersedih... Mari bantu pulihkannya! 💚"
+                    </div>
+                    
+                    <!-- Mascot Badge -->
+                    <div class="mt-4 bg-white/95 border-2 border-green-400 py-2 px-5 rounded-full shadow-md flex items-center gap-2">
+                        <span class="text-2xl">🐢</span>
+                        <span class="font-fredoka font-bold text-green-700">Cikgu Penyu</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ================= SLIDE 2: BAHAGIAN 1 - PETA POKOK INTERAKTIF ================= -->
+        <section id="slide-2" class="w-full bg-white rounded-3xl p-4 sm:p-8 shadow-xl border-4 border-green-200 hidden transition-all duration-500">
+            <div class="text-center mb-6">
+                <span class="px-4 py-1.5 bg-emerald-100 text-emerald-800 font-bold rounded-full text-xs sm:text-sm font-fredoka">
+                    Bahagian 1: Peta Pokok i-Think
+                </span>
+                <h2 class="font-fredoka text-2xl sm:text-4xl text-green-800 font-bold mt-2">Jenis-Jenis Pencemaran Alam Sekitar</h2>
+                <p class="text-sm sm:text-base text-gray-500 mt-1">Klik pada setiap cabang kotak hijau di bawah untuk mempelajari definisi, punca, dan contoh situasi!</p>
+            </div>
+
+            <!-- THE TREE MAP (PETA POKOK) -->
+            <div class="relative w-full overflow-x-auto pb-4">
+                <div class="min-w-[800px] lg:min-w-0 flex flex-col items-center">
+                    
+                    <!-- Root Node (Tajuk Utama) -->
+                    <div class="bg-gradient-to-r from-emerald-500 to-green-600 text-white font-fredoka text-lg sm:text-xl py-3 px-8 rounded-2xl shadow-md border-2 border-green-300 text-center z-10">
+                        📁 Jenis-Jenis Pencemaran
+                    </div>
+                    
+                    <!-- Vertical Line Connecting Root to Horizontal bar -->
+                    <div class="w-1 h-8 bg-green-300"></div>
+                    
+                    <!-- Horizontal Bar -->
+                    <div class="w-[80%] h-1 bg-green-300 relative flex justify-between">
+                        <!-- Connectors for branches -->
+                        <div class="w-1 h-6 bg-green-300 absolute left-0 top-0"></div>
+                        <div class="w-1 h-6 bg-green-300 absolute left-[25%] top-0"></div>
+                        <div class="w-1 h-6 bg-green-300 absolute left-[50%] top-0"></div>
+                        <div class="w-1 h-6 bg-green-300 absolute left-[75%] top-0"></div>
+                        <div class="w-1 h-6 bg-green-300 absolute right-0 top-0"></div>
+                    </div>
+                    
+                    <!-- Branches Container -->
+                    <div class="grid grid-cols-5 gap-3 w-full mt-5">
+                        
+                        <!-- Branch 1: Udara -->
+                        <button onclick="selectBranch('udara')" id="btn-udara" class="branch-btn bg-white hover:bg-emerald-50 border-2 border-green-300 hover:border-emerald-500 rounded-xl p-3 text-center transition-all duration-300 shadow-sm flex flex-col items-center gap-2 group">
+                            <span class="text-3xl group-hover:scale-110 transition-transform">💨</span>
+                            <span class="font-fredoka font-semibold text-green-800 text-sm sm:text-base">Pencemaran Udara</span>
+                            <span class="text-[10px] bg-emerald-100 text-emerald-800 px-2 py-0.5 rounded-full font-bold">Teroka 🔍</span>
+                        </button>
+                        
+                        <!-- Branch 2: Air -->
+                        <button onclick="selectBranch('air')" id="btn-air" class="branch-btn bg-white hover:bg-emerald-50 border-2 border-green-300 hover:border-emerald-500 rounded-xl p-3 text-center transition-all duration-300 shadow-sm flex flex-col items-center gap-2 group">
+                            <span class="text-3xl group-hover:scale-110 transition-transform">💧</span>
+                            <span class="font-fredoka font-semibold text-green-800 text-sm sm:text-base">Pencemaran Air</span>
+                            <span class="text-[10px] bg-emerald-100 text-emerald-800 px-2 py-0.5 rounded-full font-bold">Teroka 🔍</span>
+                        </button>
+                        
+                        <!-- Branch 3: Tanah -->
+                        <button onclick="selectBranch('tanah')" id="btn-tanah" class="branch-btn bg-white hover:bg-emerald-50 border-2 border-green-300 hover:border-emerald-500 rounded-xl p-3 text-center transition-all duration-300 shadow-sm flex flex-col items-center gap-2 group">
+                            <span class="text-3xl group-hover:scale-110 transition-transform">🪱</span>
+                            <span class="font-fredoka font-semibold text-green-800 text-sm sm:text-base">Pencemaran Tanah</span>
+                            <span class="text-[10px] bg-emerald-100 text-emerald-800 px-2 py-0.5 rounded-full font-bold">Teroka 🔍</span>
+                        </button>
+                        
+                        <!-- Branch 4: Sungai -->
+                        <button onclick="selectBranch('sungai')" id="btn-sungai" class="branch-btn bg-white hover:bg-emerald-50 border-2 border-green-300 hover:border-emerald-500 rounded-xl p-3 text-center transition-all duration-300 shadow-sm flex flex-col items-center gap-2 group">
+                            <span class="text-3xl group-hover:scale-110 transition-transform">🏞️</span>
+                            <span class="font-fredoka font-semibold text-green-800 text-sm sm:text-base">Pencemaran Sungai</span>
+                            <span class="text-[10px] bg-emerald-100 text-emerald-800 px-2 py-0.5 rounded-full font-bold">Teroka 🔍</span>
+                        </button>
+                        
+                        <!-- Branch 5: Laut -->
+                        <button onclick="selectBranch('laut')" id="btn-laut" class="branch-btn bg-white hover:bg-emerald-50 border-2 border-green-300 hover:border-emerald-500 rounded-xl p-3 text-center transition-all duration-300 shadow-sm flex flex-col items-center gap-2 group">
+                            <span class="text-3xl group-hover:scale-110 transition-transform">🌊</span>
+                            <span class="font-fredoka font-semibold text-green-800 text-sm sm:text-base">Pencemaran Laut</span>
+                            <span class="text-[10px] bg-emerald-100 text-emerald-800 px-2 py-0.5 rounded-full font-bold">Teroka 🔍</span>
+                        </button>
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- INTERACTIVE CONTENT CARD DISPLAY -->
+            <div id="branch-details" class="mt-6 bg-gradient-to-br from-green-50 to-emerald-50 rounded-2xl p-5 border-2 border-green-200 hidden">
+                <div class="flex flex-col md:flex-row gap-6 items-start">
+                    
+                    <!-- Visual Representation -->
+                    <div class="w-full md:w-1/3 bg-white rounded-xl p-4 shadow-inner border-2 border-green-100 flex flex-col items-center justify-center text-center">
+                        <div id="branch-icon-large" class="text-6xl mb-3">💨</div>
+                        <h3 id="branch-title-large" class="font-fredoka text-xl text-green-800 font-bold">Pencemaran Udara</h3>
+                        
+                        <!-- Mini Interactive Sketch SVG container (changes based on selection) -->
+                        <div class="w-full mt-3 h-32 bg-sky-50 rounded-lg flex items-center justify-center overflow-hidden border border-slate-100" id="branch-mini-sketch">
+                            <!-- Dynamic SVG goes here -->
+                        </div>
+                    </div>
+                    
+                    <!-- Text Details -->
+                    <div class="w-full md:w-2/3 space-y-4">
+                        <!-- Definisi -->
+                        <div class="bg-white/80 p-3.5 rounded-xl border-l-4 border-emerald-500 shadow-sm">
+                            <h4 class="font-fredoka text-emerald-800 font-bold flex items-center gap-2">
+                                <i class="fa-solid fa-book-open"></i> Definisi
+                            </h4>
+                            <p id="branch-def" class="text-gray-700 text-sm sm:text-base mt-1">Sesuatu yang dimasukkan ke dalam...</p>
+                        </div>
+                        
+                        <!-- Punca -->
+                        <div class="bg-white/80 p-3.5 rounded-xl border-l-4 border-amber-500 shadow-sm">
+                            <h4 class="font-fredoka text-amber-800 font-bold flex items-center gap-2">
+                                <i class="fa-solid fa-triangle-exclamation"></i> Punca-Punca Utama
+                            </h4>
+                            <p id="branch-punca" class="text-gray-700 text-sm sm:text-base mt-1">Sebab-sebab berlaku...</p>
+                        </div>
+                        
+                        <!-- Contoh Situasi -->
+                        <div class="bg-white/80 p-3.5 rounded-xl border-l-4 border-blue-500 shadow-sm">
+                            <h4 class="font-fredoka text-blue-800 font-bold flex items-center gap-2">
+                                <i class="fa-solid fa-house-chimney-window"></i> Contoh Situasi Harian
+                            </h4>
+                            <p id="branch-contoh" class="text-gray-700 text-sm sm:text-base mt-1">Bayangkan jika...</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Helper Prompt to proceed -->
+                <div class="mt-5 flex justify-end items-center gap-3">
+                    <span class="text-xs text-gray-500 italic">Dah faham tentang pencemaran ini? Jom uji pemahaman!</span>
+                    <button onclick="goToSlide(3)" class="bg-emerald-600 hover:bg-emerald-700 text-white font-fredoka px-4 py-2 rounded-xl text-sm transition-all flex items-center gap-2">
+                        Pergi ke Bulatan Soalan <i class="fa-solid fa-circle-question"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- DEFAULT INSTRUCTION WHEN NO BRANCH SELECTED -->
+            <div id="branch-placeholder" class="mt-6 bg-slate-50 border-2 border-dashed border-slate-300 rounded-2xl p-8 text-center text-gray-500">
+                <p class="text-lg font-semibold">💡 Klik mana-mana cabang hijau di atas untuk membaca info terperinci!</p>
+                <p class="text-sm mt-1">Setiap cabang akan mendedahkan kesan buruk pencemaran tersebut kepada hidupan.</p>
+            </div>
+        </section>
+
+
+        <!-- ================= SLIDE 3: BAHAGIAN 2 - CIRCLE OF QUESTIONS ================= -->
+        <section id="slide-3" class="w-full bg-white rounded-3xl p-4 sm:p-8 shadow-xl border-4 border-green-200 hidden transition-all duration-500">
+            <div class="text-center mb-6">
+                <span class="px-4 py-1.5 bg-sky-100 text-sky-800 font-bold rounded-full text-xs sm:text-sm font-fredoka">
+                    Bahagian 2: Circle of Questions (Bulatan Soalan)
+                </span>
+                <h2 class="font-fredoka text-2xl sm:text-4xl text-sky-800 font-bold mt-2">Mari Berfikir Bersama Cikgu Penyu</h2>
+                <p class="text-sm sm:text-base text-gray-500 mt-1">Pilih jenis pencemaran terlebih dahulu, kemudian klik setiap soalan pada bulatan untuk menyelesaikannya!</p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-center">
+                
+                <!-- COLUMN A: Selector for Pollution Type -->
+                <div class="lg:col-span-3 flex flex-col gap-2 bg-slate-50 p-4 rounded-2xl border border-slate-200">
+                    <label class="font-fredoka font-bold text-gray-700 text-xs uppercase tracking-wide">Pilih Pencemaran Fokus:</label>
+                    
+                    <button onclick="changeQAPollution('udara')" id="qa-poll-udara" class="qa-poll-btn text-left p-2.5 rounded-xl border-2 border-sky-400 bg-sky-50 text-sky-900 font-semibold text-sm flex items-center gap-2 transition-all">
+                        <span>💨</span> Pencemaran Udara
+                    </button>
+                    
+                    <button onclick="changeQAPollution('air')" id="qa-poll-air" class="qa-poll-btn text-left p-2.5 rounded-xl border-2 border-transparent bg-white hover:bg-slate-100 text-gray-700 font-semibold text-sm flex items-center gap-2 transition-all">
+                        <span>💧</span> Pencemaran Air
+                    </button>
+                    
+                    <button onclick="changeQAPollution('tanah')" id="qa-poll-tanah" class="qa-poll-btn text-left p-2.5 rounded-xl border-2 border-transparent bg-white hover:bg-slate-100 text-gray-700 font-semibold text-sm flex items-center gap-2 transition-all">
+                        <span>🪱</span> Pencemaran Tanah
+                    </button>
+                    
+                    <button onclick="changeQAPollution('sungai')" id="qa-poll-sungai" class="qa-poll-btn text-left p-2.5 rounded-xl border-2 border-transparent bg-white hover:bg-slate-100 text-gray-700 font-semibold text-sm flex items-center gap-2 transition-all">
+                        <span>🏞️</span> Pencemaran Sungai
+                    </button>
+                    
+                    <button onclick="changeQAPollution('laut')" id="qa-poll-laut" class="qa-poll-btn text-left p-2.5 rounded-xl border-2 border-transparent bg-white hover:bg-slate-100 text-gray-700 font-semibold text-sm flex items-center gap-2 transition-all">
+                        <span>🌊</span> Pencemaran Laut
+                    </button>
+                </div>
+
+                <!-- COLUMN B: Interactive Circle of Questions Visual -->
+                <div class="lg:col-span-5 flex justify-center items-center py-4">
+                    <div class="relative w-64 h-64 sm:w-80 sm:h-80 flex items-center justify-center">
+                        
+                        <!-- Center Core -->
+                        <div class="absolute w-24 h-24 sm:w-32 sm:h-32 rounded-full bg-gradient-to-tr from-sky-400 to-indigo-500 shadow-lg border-4 border-white flex flex-col items-center justify-center text-center z-10 text-white">
+                            <span class="text-xl sm:text-2xl">❓</span>
+                            <span class="font-fredoka text-[10px] sm:text-xs font-bold px-1">BULATAN SOALAN</span>
+                        </div>
+                        
+                        <!-- Question Buttons in Circle -->
+                        <!-- Q1: Apa (Top) -->
+                        <button onclick="selectQuestion(1)" id="q-btn-1" class="q-ring-btn absolute -top-1 w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-white hover:bg-sky-100 border-4 border-amber-400 shadow-md flex flex-col items-center justify-center transition-all duration-300 scale-100 active:scale-95 group">
+                            <span class="text-xs font-fredoka font-bold text-amber-700">1. APA?</span>
+                            <span class="text-xs text-gray-400 font-semibold group-hover:scale-110">🔎</span>
+                        </button>
+                        
+                        <!-- Q2: Di Mana (Right Top) -->
+                        <button onclick="selectQuestion(2)" id="q-btn-2" class="q-ring-btn absolute right-0 top-14 sm:top-16 w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-white hover:bg-sky-100 border-4 border-rose-400 shadow-md flex flex-col items-center justify-center transition-all duration-300 scale-100 active:scale-95 group">
+                            <span class="text-[10px] sm:text-xs font-fredoka font-bold text-rose-700">2. DI MANA?</span>
+                            <span class="text-xs text-gray-400 font-semibold group-hover:scale-110">📍</span>
+                        </button>
+                        
+                        <!-- Q3: Siapa (Right Bottom) -->
+                        <button onclick="selectQuestion(3)" id="q-btn-3" class="q-ring-btn absolute right-6 bottom-1 w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-white hover:bg-sky-100 border-4 border-purple-400 shadow-md flex flex-col items-center justify-center transition-all duration-300 scale-100 active:scale-95 group">
+                            <span class="text-[10px] sm:text-xs font-fredoka font-bold text-purple-700">3. SIAPA?</span>
+                            <span class="text-xs text-gray-400 font-semibold group-hover:scale-110">🧑‍🤝‍🧑</span>
+                        </button>
+                        
+                        <!-- Q4: Mengapa (Left Bottom) -->
+                        <button onclick="selectQuestion(4)" id="q-btn-4" class="q-ring-btn absolute left-6 bottom-1 w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-white hover:bg-sky-100 border-4 border-emerald-400 shadow-md flex flex-col items-center justify-center transition-all duration-300 scale-100 active:scale-95 group">
+                            <span class="text-[10px] sm:text-xs font-fredoka font-bold text-emerald-700">4. MENGAPA?</span>
+                            <span class="text-xs text-gray-400 font-semibold group-hover:scale-110">🧠</span>
+                        </button>
+                        
+                        <!-- Q5: Bagaimana (Left Top) -->
+                        <button onclick="selectQuestion(5)" id="q-btn-5" class="q-ring-btn absolute left-0 top-14 sm:top-16 w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-white hover:bg-sky-100 border-4 border-indigo-400 shadow-md flex flex-col items-center justify-center transition-all duration-300 scale-100 active:scale-95 group">
+                            <span class="text-[10px] sm:text-xs font-fredoka font-bold text-indigo-700">5. BAGAIMANA?</span>
+                            <span class="text-xs text-gray-400 font-semibold group-hover:scale-110">🛠️</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- COLUMN C: Interactive Question Details & Input -->
+                <div class="lg:col-span-4 bg-sky-50/50 rounded-2xl p-5 border-2 border-sky-100 min-h-[280px] flex flex-col justify-between">
+                    <div>
+                        <!-- Header Question Details -->
+                        <div class="flex items-center gap-3 mb-3">
+                            <span id="qa-badge" class="w-8 h-8 rounded-full bg-amber-400 text-white font-fredoka flex items-center justify-center font-bold">1</span>
+                            <h3 id="qa-question-title" class="font-fredoka text-lg text-slate-800 font-bold">Apa yang berlaku?</h3>
+                        </div>
+                        
+                        <!-- Scenario Guide -->
+                        <p id="qa-context-text" class="text-xs text-gray-500 italic mb-4">Untuk Pencemaran Udara...</p>
+                        
+                        <!-- Mini Question Options (Primary school level friendly choices) -->
+                        <div id="qa-options-container" class="space-y-2 mb-4">
+                            <!-- Dynamically populated options -->
+                        </div>
+
+                        <!-- Optional Kid Writing Area -->
+                        <div class="mt-2">
+                            <label class="block text-xs font-bold text-gray-600 mb-1">Tulis ulasan/nota kamu sendiri (Pilihan):</label>
+                            <textarea id="qa-custom-notes" rows="2" placeholder="Tuliskan idea hebat kamu di sini..." class="w-full text-sm p-2 rounded-lg border border-slate-300 focus:outline-none focus:ring-2 focus:ring-sky-400"></textarea>
+                        </div>
+                    </div>
+
+                    <!-- Action Row -->
+                    <div class="mt-4 flex justify-between items-center pt-3 border-t border-slate-200">
+                        <button id="btn-save-note" onclick="saveAnswerNote()" class="bg-sky-600 hover:bg-sky-700 text-white text-xs font-bold py-2 px-3 rounded-lg transition-all flex items-center gap-1.5">
+                            <i class="fa-solid fa-check"></i> Simpan Jawapan
+                        </button>
+                        <span id="qa-status" class="text-[11px] font-bold text-emerald-600 hidden">✅ Berjaya disimpan!</span>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Mascot Feedback / Guide Section -->
+            <div class="mt-6 p-4 bg-yellow-50 rounded-2xl border border-yellow-200 flex items-center gap-4">
+                <span class="text-4xl float-animation">🐢</span>
+                <div>
+                    <h4 class="font-fredoka font-bold text-yellow-800 text-sm">Nasihat Cikgu Penyu:</h4>
+                    <p id="mascot-advice" class="text-xs sm:text-sm text-yellow-900">Mari pilih "APA?" untuk memahami apa sebenarnya keadaan pencemaran yang terpilih ini!</p>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ================= SLIDE 4: KESIMPULAN / SIJIL REWARD ================= -->
+        <section id="slide-4" class="w-full bg-white rounded-3xl p-6 sm:p-10 shadow-xl border-4 border-green-200 hidden transition-all duration-500 text-center">
+            <span class="text-6xl mb-4 inline-block animate-bounce">🌟</span>
+            <h2 class="font-fredoka text-3xl sm:text-5xl text-green-800 font-bold mb-3">Syabas! Anda Kini Hero Bumi!</h2>
+            <p class="text-gray-600 max-w-2xl mx-auto mb-8 text-sm sm:text-base leading-relaxed">
+                Kawan-kawan telah menyelesaikan pembelajaran <strong>Peta Pokok i-Think</strong> dan melengkapkan aktiviti <strong>Bulatan Soalan</strong>. Sila tunjukkan sijil penghargaan ini kepada guru atau ibu bapa anda sebagai bukti tamat pembelajaran!
+            </p>
+
+            <!-- CERTIFICATE DISPLAY (NON-MARKING, REWARDING INSTEAD) -->
+            <div class="max-w-xl mx-auto bg-gradient-to-r from-yellow-50 to-amber-50 rounded-3xl p-6 sm:p-8 border-4 border-amber-300 shadow-md relative overflow-hidden mb-8">
+                <!-- Ribbon Graphic -->
+                <div class="absolute -top-4 -right-4 w-16 h-16 bg-amber-400 rotate-45 flex items-center justify-center text-white font-bold text-xs">REWARD</div>
+                
+                <h3 class="font-fredoka text-xl sm:text-2xl text-amber-800 font-bold mb-1">SIJIL PENGHARGAAN</h3>
+                <p class="text-xs text-amber-600 tracking-wide uppercase font-bold mb-6">Hero Alam Sekitar Cilik</p>
+                
+                <!-- Kid's Name Input -->
+                <div class="mb-6">
+                    <label class="block text-xs font-bold text-amber-700 uppercase mb-1">Sila taip nama anda:</label>
+                    <input type="text" id="cert-kid-name" oninput="updateCertName()" placeholder="[Taip nama anda di sini]" class="text-center font-fredoka text-xl text-green-800 font-bold bg-white border-b-2 border-dashed border-amber-400 focus:outline-none w-full max-w-xs px-2 py-1">
+                </div>
+
+                <p class="text-sm text-slate-700 italic max-w-md mx-auto leading-relaxed">
+                    Dianugerahkan kerana berjaya memahami kepentingan memelihara bumi, menguasai ilmu pencemaran udara, air, tanah, sungai, dan laut serta berazam untuk melindunginya.
+                </p>
+
+                <!-- Footer Signatures -->
+                <div class="mt-8 flex justify-between items-end border-t border-amber-200 pt-4 text-left">
+                    <div>
+                        <p class="text-[10px] text-gray-400 uppercase tracking-widest font-bold">Tarikh</p>
+                        <p id="cert-date" class="font-bold text-xs text-slate-700">24 Jun 2026</p>
+                    </div>
+                    <div class="text-right">
+                        <p class="text-[10px] text-gray-400 uppercase tracking-widest font-bold">Pemberi Sijil</p>
+                        <p class="font-fredoka text-sm font-bold text-emerald-600">🐢 Cikgu Penyu</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Interactive Action buttons -->
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <button onclick="goToSlide(2)" class="bg-emerald-100 hover:bg-emerald-200 text-emerald-800 font-fredoka font-semibold px-6 py-3 rounded-2xl text-sm transition-all flex items-center justify-center gap-2">
+                    <i class="fa-solid fa-rotate-left"></i> Ulang Belajar Peta Pokok
+                </button>
+                <button onclick="window.print()" class="bg-amber-500 hover:bg-amber-600 text-white font-fredoka font-semibold px-6 py-3 rounded-2xl text-sm transition-all flex items-center justify-center gap-2 shadow-sm">
+                    <i class="fa-solid fa-print"></i> Cetak Slaid / Sijil
+                </button>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER NAVIGATOR CONTROLS -->
+    <footer class="bg-white border-t border-slate-200 py-4 px-6 shadow-md mt-auto">
+        <div class="max-w-6xl mx-auto flex justify-between items-center">
+            <!-- Prev Button -->
+            <button id="btn-prev" onclick="prevSlide()" class="bg-slate-100 hover:bg-slate-200 text-slate-700 font-fredoka font-semibold px-5 py-2.5 rounded-xl text-sm sm:text-base flex items-center gap-2 transition-all opacity-50 cursor-not-allowed" disabled>
+                <i class="fa-solid fa-arrow-left"></i> Kembali
+            </button>
+            
+            <!-- Mid Progress Helper -->
+            <p id="progress-text" class="text-xs sm:text-sm text-gray-500 font-semibold">Slaid 1 daripada 4</p>
+            
+            <!-- Next Button -->
+            <button id="btn-next" onclick="nextSlide()" class="bg-green-500 hover:bg-green-600 text-white font-fredoka font-semibold px-5 py-2.5 rounded-xl text-sm sm:text-base flex items-center gap-2 transition-all shadow-sm">
+                Seterusnya <i class="fa-solid fa-arrow-right"></i>
+            </button>
+        </div>
+    </footer>
+
+
+    <!-- JAVASCRIPT LOGIC & CONTENT DATA -->
+    <script>
+        // Global State variables
+        let currentSlide = 1;
+        let selectedBranchKey = '';
+        let selectedQuestionIndex = 1; 
+        let selectedQAPollution = 'udara';
+
+        // Reflection answers storage (saved in memory for the session)
+        const reflectionAnswers = {
+            udara: { 1: '', 2: '', 3: '', 4: '', 5: '' },
+            air: { 1: '', 2: '', 3: '', 4: '', 5: '' },
+            tanah: { 1: '', 2: '', 3: '', 4: '', 5: '' },
+            sungai: { 1: '', 2: '', 3: '', 4: '', 5: '' },
+            laut: { 1: '', 2: '', 3: '', 4: '', 5: '' }
+        };
+
+        // Date Auto-set for certificate
+        document.getElementById('cert-date').innerText = new Date().toLocaleDateString('ms-MY', {
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric'
+        });
+
+        // Interactive Content Data for Section 1 (Peta Pokok)
+        const branchData = {
+            udara: {
+                title: "Pencemaran Udara 💨",
+                icon: "💨",
+                def: "Pembebasan gas berbahaya, asap tebal, debu, dan zarah halus ke dalam atmosfera yang menjejaskan kualiti udara yang kita sedut.",
+                punca: "Pelepasan asap hitam daripada serombong kilang industri, asap ekzos kenderaan, pembakaran terbuka sampah-sarap, serta kebakaran hutan.",
+                contoh: "Kejadian jerebu tebal di bandar yang menyebabkan mata kita pedih, tekak gatal, dan sekolah terpaksa ditutup sementara waktu demi keselamatan.",
+                sketch: `
+                    <svg viewBox="0 0 100 60" class="w-full h-full" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <!-- Factory shape -->
+                        <rect x="15" y="35" width="30" height="20" fill="#94a3b8"/>
+                        <polygon points="15,35 25,25 35,35" fill="#64748b"/>
+                        <!-- Chimney -->
+                        <rect x="35" y="15" width="8" height="20" fill="#475569"/>
+                        <!-- Smoke puff -->
+                        <circle cx="39" cy="12" r="6" fill="#cbd5e1" opacity="0.8"/>
+                        <circle cx="45" cy="8" r="8" fill="#94a3b8" opacity="0.9"/>
+                        <circle cx="55" cy="6" r="10" fill="#64748b" opacity="0.8"/>
+                        <!-- Sky Background elements -->
+                        <path d="M70 20 H85 M65 25 H80" stroke="#cbd5e1" stroke-width="2" stroke-linecap="round"/>
+                        <!-- Small car -->
+                        <rect x="60" y="45" width="20" height="8" rx="2" fill="#ef4444"/>
+                        <circle cx="65" cy="53" r="3" fill="#1e293b"/>
+                        <circle cx="75" cy="53" r="3" fill="#1e293b"/>
+                        <!-- Car exhaust -->
+                        <path d="M55 48 C 50 48, 48 45, 45 46" stroke="#94a3b8" stroke-width="1.5" stroke-linecap="round"/>
+                    </svg>
+                `
+            },
+            air: {
+                title: "Pencemaran Air 💧",
+                icon: "💧",
+                def: "Kemasukan bahan pencemar berbahaya seperti bahan kimia industri atau sampah sarap ke dalam sumber air asli (seperti tasik atau air bawah tanah) sehingga tidak selamat digunakan.",
+                punca: "Pembuangan sisa kimia toksik oleh kilang yang tidak bertanggungjawab, sisa kumbahan domestik yang tidak dirawat, serta sisa minyak.",
+                contoh: "Air paip di rumah bertukar warna menjadi keruh, berbau busuk, dan tidak selamat untuk digunakan untuk minum atau mandi.",
+                sketch: `
+                    <svg viewBox="0 0 100 60" class="w-full h-full" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <!-- Water surface -->
+                        <path d="M0 35 Q 25 32, 50 35 T 100 35" stroke="#38bdf8" stroke-width="3" fill="none"/>
+                        <path d="M0 45 Q 25 42, 50 45 T 100 45" stroke="#0284c7" stroke-width="2" fill="none"/>
+                        <!-- Chemical Barrel leaking -->
+                        <rect x="20" y="15" width="16" height="22" rx="2" fill="#ef4444"/>
+                        <line x1="20" y1="22" x2="36" y2="22" stroke="white" stroke-width="2"/>
+                        <!-- Toxic drops -->
+                        <circle cx="28" cy="40" r="4" fill="#22c55e"/>
+                        <circle cx="35" cy="43" r="5" fill="#22c55e" opacity="0.6"/>
+                        <!-- Fish skeleton -->
+                        <path d="M65 42 L80 42 M70 38 L70 46 M75 38 L75 46" stroke="#475569" stroke-width="1.5" stroke-linecap="round"/>
+                        <polygon points="80,42 85,38 85,46" fill="#475569"/>
+                    </svg>
+                `
+            },
+            tanah: {
+                title: "Pencemaran Tanah 🪱",
+                icon: "🪱",
+                def: "Kejatuhan kualiti dan kemusnahan lapisan atas tanah akibat kemasukan bahan kimia berbahaya, plastik, dan sisa pepejal yang sukar reput.",
+                punca: "Penggunaan baja kimia dan racun perosak secara berlebihan oleh petani, pembuangan sampah plastik di merata tempat, dan pembuangan sisa pepejal secara haram.",
+                contoh: "Kawasan hutan yang dijadikan tempat longgokan sampah haram, berbau busuk, dipenuhi lalat, serta tumbuhan di sekelilingnya mati layu.",
+                sketch: `
+                    <svg viewBox="0 0 100 60" class="w-full h-full" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <!-- Ground line -->
+                        <rect x="0" y="40" width="100" height="20" fill="#78350f"/>
+                        <!-- Dead flower -->
+                        <path d="M30 40 Q 25 25, 20 28" stroke="#15803d" stroke-width="2" fill="none"/>
+                        <!-- Drooping petals -->
+                        <circle cx="20" cy="28" r="4" fill="#f59e0b"/>
+                        <!-- Plastic trash on ground -->
+                        <rect x="50" y="32" width="14" height="10" rx="1" fill="#38bdf8" transform="rotate(15 50 32)"/>
+                        <path d="M52 35 L62 35" stroke="white" stroke-width="2"/>
+                        <!-- Can/Tin garbage -->
+                        <rect x="70" y="36" width="10" height="8" fill="#94a3b8" transform="rotate(-10 70 36)"/>
+                        <!-- Sad worm -->
+                        <path d="M10 48 Q 15 45, 20 48 T 30 48" stroke="#f472b6" stroke-width="3" fill="none" stroke-linecap="round"/>
+                    </svg>
+                `
+            },
+            sungai: {
+                title: "Pencemaran Sungai 🏞️",
+                icon: "🏞️",
+                def: "Kemerosotan kualiti air sungai akibat pembuangan kumbahan atau sisa pepejal secara langsung yang mengganggu kehidupan akuatik air tawar.",
+                punca: "Sikap segelintir masyarakat membuang sampah sarap domestik terus ke dalam sungai, sisa toksik dari sektor industri kecil, dan aliran sisa lumpur dari kawasan pembinaan.",
+                contoh: "Ikan-ikan air tawar seperti lampam dan kelah mati terapung akibat air sungai tersumbat dengan beg plastik, botol, dan sisa makanan yang mereput.",
+                sketch: `
+                    <svg viewBox="0 0 100 60" class="w-full h-full" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <!-- River banks -->
+                        <rect x="0" y="0" width="100" height="15" fill="#22c55e" opacity="0.3"/>
+                        <rect x="0" y="45" width="100" height="15" fill="#22c55e" opacity="0.3"/>
+                        <!-- River flow -->
+                        <rect x="0" y="15" width="100" height="30" fill="#0284c7"/>
+                        <!-- Plastic bags floating -->
+                        <path d="M30 25 C32 23, 38 23, 40 26 C41 28, 38 32, 33 32" stroke="#e2e8f0" stroke-width="2" fill="#f8fafc"/>
+                        <!-- Tires thrown in river -->
+                        <circle cx="65" cy="30" r="8" fill="#1e293b"/>
+                        <circle cx="65" cy="30" r="4" fill="#0284c7"/>
+                        <!-- Floating dirt particles -->
+                        <circle cx="15" cy="22" r="2" fill="#78350f"/>
+                        <circle cx="85" cy="38" r="2" fill="#78350f"/>
+                    </svg>
+                `
+            },
+            laut: {
+                title: "Pencemaran Laut 🌊",
+                icon: "🌊",
+                def: "Pencemaran samudera luas akibat kemasukan plastik, tumpahan sisa minyak dari kapal besar, dan bahan pencemar dari daratan yang dibawa oleh muara.",
+                punca: "Tumpahan minyak dari tangki kapal kargo, pembuangan plastik di tepi pantai oleh pengunjung, dan pembuangan sisa toksik berpusat secara terus ke laut lepas.",
+                contoh: "Penyu laut yang menyangka beg plastik lutsinar yang terapung sebagai makanan kegemarannya iaitu ubur-ubur, menyebabkan ia tercekik lalu mati.",
+                sketch: `
+                    <svg viewBox="0 0 100 60" class="w-full h-full" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <!-- Sea deep blue -->
+                        <rect x="0" y="0" width="100" height="60" fill="#1d4ed8"/>
+                        <!-- Wave lines -->
+                        <path d="M0 15 Q 25 10, 50 15 T 100 15" stroke="#3b82f6" stroke-width="2" fill="none"/>
+                        <!-- Sad turtle outline -->
+                        <circle cx="45" cy="35" r="10" fill="#22c55e"/>
+                        <rect x="52" y="32" width="6" height="6" rx="2" fill="#166534"/>
+                        <!-- Turtle Flippers -->
+                        <ellipse cx="45" cy="23" rx="4" ry="7" fill="#166534" transform="rotate(30 45 23)"/>
+                        <ellipse cx="45" cy="47" rx="4" ry="7" fill="#166534" transform="rotate(-30 45 47)"/>
+                        <!-- Plastic ring trap near turtle -->
+                        <circle cx="58" cy="35" r="5" stroke="#f1f5f9" stroke-width="2" fill="none"/>
+                        <!-- Oil spill patch -->
+                        <ellipse cx="20" cy="20" rx="15" ry="8" fill="#0f172a" opacity="0.9"/>
+                    </svg>
+                `
+            }
+        };
+
+        // Interactive Questions Data for Section 2 (Circle of Questions)
+        const questionDatabase = {
+            1: {
+                title: "Apa yang berlaku?",
+                icon: "🔎",
+                badge: "1",
+                color: "border-amber-400 bg-amber-50 text-amber-900",
+                options: {
+                    udara: [
+                        "Kualiti udara menurun dan dipenuhi gas bertoksik.",
+                        "Udara menjadi wangi dan menyegarkan.",
+                        "Pokok-pokok membesar dengan lebih cepat."
+                    ],
+                    air: [
+                        "Air sungai bertukar jernih dan manis.",
+                        "Air menjadi kotor, beracun, dan tidak selamat untuk hidupan.",
+                        "Air laut menjadi lebih cetek dan tenang."
+                    ],
+                    tanah: [
+                        "Tanah menjadi subur untuk tanaman sayuran.",
+                        "Kualiti struktur tanah musnah dan tidak subur lagi.",
+                        "Tanah bertukar menjadi emas berharga."
+                    ],
+                    sungai: [
+                        "Sungai dipenuhi longgokan sampah dan air berbau busuk.",
+                        "Arus sungai mengalir lebih deras dan bersih.",
+                        "Sungai menjadi tempat mandi-manda yang paling selamat."
+                    ],
+                    laut: [
+                        "Terumbu karang menjadi lebih berwarna-warni.",
+                        "Laut dipenuhi sisa tumpahan minyak dan sampah plastik berbahaya.",
+                        "Air laut surut sepenuhnya."
+                    ]
+                },
+                advice: "Fokus soalan ini ialah memahami KEADAAN fizikal pencemaran tersebut. Apakah perubahan buruk yang boleh dilihat dengan mata kasar?"
+            },
+            2: {
+                title: "Di mana berlaku?",
+                icon: "📍",
+                badge: "2",
+                color: "border-rose-400 bg-rose-50 text-rose-900",
+                options: {
+                    udara: [
+                        "Di kawasan perumahan berhampiran bandar dan zon industri kilang.",
+                        "Hanya di kawasan kutub utara.",
+                        "Hanya di dasar gua yang gelap."
+                    ],
+                    air: [
+                        "Di tasik, kolam, dan sumber air bawah tanah berdekatan loji sisa.",
+                        "Di awan-gemawan ketika hujan lebat.",
+                        "Di padang pasir yang kering kontang."
+                    ],
+                    tanah: [
+                        "Di dalam makmal sains sekolah sahaja.",
+                        "Di kawasan pembuangan sampah haram dan tanah pertanian terbiar.",
+                        "Di atas bumbung bangunan pencakar langit."
+                    ],
+                    sungai: [
+                        "Di bahagian hilir sungai berhampiran penempatan dan kilang.",
+                        "Di puncak gunung berapi aktif.",
+                        "Hanya di kawasan air terjun yang tinggi."
+                    ],
+                    laut: [
+                        "Di perairan pantai rekreasi dan laluan kapal kargo lautan lepas.",
+                        "Di dalam kolam renang rumah sukan.",
+                        "Hanya di kawasan parit kecil tepi jalan."
+                    ]
+                },
+                advice: "Lokasi kejadian sangat penting! Kenal pasti di manakah punca utama sisa pembuangan ini biasanya terkumpul."
+            },
+            3: {
+                title: "Siapa yang menyebabkan?",
+                icon: "🧑‍🤝‍🧑",
+                badge: "3",
+                color: "border-purple-400 bg-purple-50 text-purple-900",
+                options: {
+                    udara: [
+                        "Haiwan-haiwan di dalam hutan belantara.",
+                        "Manusia yang tidak bertanggungjawab yang membakar secara terbuka.",
+                        "Angin monsun tropika semata-mata."
+                    ],
+                    air: [
+                        "Pengusaha kilang yang membuang sisa toksik tanpa merawatnya dahulu.",
+                        "Ikan lumba-lumba yang melompat di lautan.",
+                        "Tumbuhan akuatik yang tumbuh liar."
+                    ],
+                    tanah: [
+                        "Cacing tanah yang menggali lubang terlalu dalam.",
+                        "Petani yang menggunakan racun kimia berlebihan & pembuang sampah haram.",
+                        "Burung-burung liar yang membina sarang."
+                    ],
+                    sungai: [
+                        "Penduduk yang membuang sampah terus dari atas jambatan.",
+                        "Ikan duyung di dalam lagenda.",
+                        "Batu-batu sungai yang besar."
+                    ],
+                    laut: [
+                        "Aktiviti manusia seperti pelancong yang membuang plastik & kapal kargo.",
+                        "Terumbu karang yang tumbuh meliar.",
+                        "Nelayan tradisional yang menggunakan joran kayu."
+                    ]
+                },
+                advice: "Ingat, alam semulajadi adalah mangsa. Siapakah pembuat keputusan yang patut bertanggungjawab atas kemusnahan ini?"
+            },
+            4: {
+                title: "Mengapa berlaku?",
+                icon: "🧠",
+                badge: "4",
+                color: "border-emerald-400 bg-emerald-50 text-emerald-900",
+                options: {
+                    udara: [
+                        "Kerana manusia mementingkan keuntungan dan tiada kesedaran sivik.",
+                        "Kerana bumi ingin menukar warnanya menjadi kelabu.",
+                        "Kerana matahari bersinar terlalu terang."
+                    ],
+                    air: [
+                        "Kerana kekurangan sistem penapisan sisa yang betul dan sikap ambil mudah.",
+                        "Sebab air ingin bercampur dengan sabun buih.",
+                        "Sebab ikan di dalam air memerlukan makanan toksik."
+                    ],
+                    tanah: [
+                        "Sebab manusia mahu melupuskan sampah dengan cara paling mudah dan murah.",
+                        "Sebab tanah itu mahu berehat daripada ditumbuhi pokok.",
+                        "Kerana tarikan graviti bumi yang sangat kuat."
+                    ],
+                    sungai: [
+                        "Kerana tiada tong sampah disediakan atau malas mencari tong sampah.",
+                        "Kerana sungai menyukai barangan plastik.",
+                        "Kerana aliran air sungai terlalu perlahan."
+                    ],
+                    laut: [
+                        "Sikap tamak pemandu kapal kargo dan pengurusan plastik yang sangat lemah.",
+                        "Sebab air laut mahu mencuci pantai menggunakan plastik.",
+                        "Sebab penyu mahu bermain dengan plastik tersebut."
+                    ]
+                },
+                advice: "Mengapa merujuk kepada SEBAB atau MOTIVASI tindakan itu diambil. Adakah ia kerana sikap malas atau ingin jimat kos?"
+            },
+            5: {
+                title: "Bagaimana boleh dielakkan?",
+                icon: "🛠️",
+                badge: "5",
+                color: "border-indigo-400 bg-indigo-50 text-indigo-900",
+                options: {
+                    udara: [
+                        "Berkongsi kenderaan, menanam lebih banyak pokok, dan undang-undang ketat.",
+                        "Menutup semua tingkap rumah sepanjang hari.",
+                        "Menghentikan pernafasan seketika."
+                    ],
+                    air: [
+                        "Menguatkuasakan denda berat pada kilang perosak & kitar semula bahan kimia.",
+                        "Membuang air kotor ke dalam pasu bunga sahaja.",
+                        "Menggunakan air mineral untuk membasuh kereta."
+                    ],
+                    tanah: [
+                        "Menggunakan baja kompos semula jadi dan mengamalkan amalan 3R (Kitar Semula).",
+                        "Menutup seluruh kawasan tanah dengan simen tebal.",
+                        "Membakar semua plastik di halaman rumah."
+                    ],
+                    sungai: [
+                        "Memasang perangkap sampah, mengadakan gotong-royong, & mendidik komuniti.",
+                        "Mengalirkan air sungai terus ke parit tertutup.",
+                        "Melarang sesiapa pun mendekati sungai."
+                    ],
+                    laut: [
+                        "Kurangkan penggunaan plastik sekali guna dan bersihkan pantai bersama-sama.",
+                        "Membina dinding kaca yang besar di sekeliling lautan.",
+                        "Melarang kapal besar belayar di lautan selamanya."
+                    ]
+                },
+                advice: "Syabas! Ini ialah langkah SOLUSI. Bagaimanakah peranan kita sebagai warganegara prihatin boleh membantu memulihkan keadaan?"
+            }
+        };
+
+        // Initialize display
+        window.onload = function() {
+            // Set first slide active
+            goToSlide(1);
+            // Pre-load default state for Circle of Questions
+            changeQAPollution('udara');
+            selectQuestion(1);
+        }
+
+        // SLIDE NAVIGATION CONTROLLER
+        function goToSlide(slideNum) {
+            currentSlide = slideNum;
+            
+            // Hide all slides
+            document.getElementById('slide-1').classList.add('hidden');
+            document.getElementById('slide-2').classList.add('hidden');
+            document.getElementById('slide-3').classList.add('hidden');
+            document.getElementById('slide-4').classList.add('hidden');
+            
+            // Show current slide
+            document.getElementById(`slide-${slideNum}`).classList.remove('hidden');
+            
+            // Update dots styles
+            for (let i = 1; i <= 4; i++) {
+                const dot = document.getElementById(`dot-${i}`);
+                if (i === slideNum) {
+                    dot.className = "w-8 h-8 rounded-full font-fredoka flex items-center justify-center text-sm font-bold transition-all duration-300 bg-green-500 text-white shadow-md";
+                } else {
+                    dot.className = "w-8 h-8 rounded-full font-fredoka flex items-center justify-center text-sm font-bold transition-all duration-300 bg-gray-100 text-gray-600 hover:bg-green-100";
+                }
+            }
+            
+            // Update Footer Buttons
+            const prevBtn = document.getElementById('btn-prev');
+            const nextBtn = document.getElementById('btn-next');
+            const progressText = document.getElementById('progress-text');
+            
+            progressText.innerText = `Slaid ${slideNum} daripada 4`;
+            
+            if (slideNum === 1) {
+                prevBtn.disabled = true;
+                prevBtn.classList.add('opacity-50', 'cursor-not-allowed');
+                nextBtn.innerHTML = `Mula Meneroka <i class="fa-solid fa-arrow-right"></i>`;
+            } else {
+                prevBtn.disabled = false;
+                prevBtn.classList.remove('opacity-50', 'cursor-not-allowed');
+                
+                if (slideNum === 4) {
+                    nextBtn.innerHTML = `Selesai 🎉`;
+                    nextBtn.onclick = function() { showSuccessFeedback(); };
+                } else {
+                    nextBtn.innerHTML = `Seterusnya <i class="fa-solid fa-arrow-right"></i>`;
+                    nextBtn.onclick = function() { nextSlide(); };
+                }
+            }
+        }
+
+        function nextSlide() {
+            if (currentSlide < 4) {
+                goToSlide(currentSlide + 1);
+            }
+        }
+
+        function prevSlide() {
+            if (currentSlide > 1) {
+                goToSlide(currentSlide - 1);
+            }
+        }
+
+        // SECTION 1: PETA POKOK CONTROLLER
+        function selectBranch(branchKey) {
+            selectedBranchKey = branchKey;
+            
+            // Deactivate all branch buttons
+            document.querySelectorAll('.branch-btn').forEach(btn => {
+                btn.className = "branch-btn bg-white hover:bg-emerald-50 border-2 border-green-300 hover:border-emerald-500 rounded-xl p-3 text-center transition-all duration-300 shadow-sm flex flex-col items-center gap-2 group";
+            });
+            
+            // Activate selected branch button
+            const selectedBtn = document.getElementById(`btn-${branchKey}`);
+            selectedBtn.className = "branch-btn bg-emerald-100 border-2 border-emerald-600 rounded-xl p-3 text-center transition-all duration-300 shadow-md flex flex-col items-center gap-2 group scale-105";
+            
+            // Update Details Card content
+            const data = branchData[branchKey];
+            document.getElementById('branch-title-large').innerText = data.title;
+            document.getElementById('branch-icon-large').innerText = data.icon;
+            document.getElementById('branch-def').innerText = data.def;
+            document.getElementById('branch-punca').innerText = data.punca;
+            document.getElementById('branch-contoh').innerText = data.contoh;
+            
+            // Inject Custom SVG Sketch
+            document.getElementById('branch-mini-sketch').innerHTML = data.sketch;
+
+            // Show details card, hide placeholder
+            document.getElementById('branch-details').classList.remove('hidden');
+            document.getElementById('branch-placeholder').classList.add('hidden');
+            
+            // Sync current QA pollution focus to match explored branch for seamless transition
+            changeQAPollution(branchKey);
+        }
+
+        // SECTION 2: CIRCLE OF QUESTIONS CONTROLLER
+        function changeQAPollution(pollutionKey) {
+            selectedQAPollution = pollutionKey;
+            
+            // Update sidebar selectors
+            document.querySelectorAll('.qa-poll-btn').forEach(btn => {
+                btn.className = "qa-poll-btn text-left p-2.5 rounded-xl border-2 border-transparent bg-white hover:bg-slate-100 text-gray-700 font-semibold text-sm flex items-center gap-2 transition-all";
+            });
+            
+            const selectedBtn = document.getElementById(`qa-poll-${pollutionKey}`);
+            if (selectedBtn) {
+                selectedBtn.className = "qa-poll-btn text-left p-2.5 rounded-xl border-2 border-sky-400 bg-sky-50 text-sky-950 font-bold text-sm flex items-center gap-2 transition-all scale-105 shadow-sm";
+            }
+            
+            // Refresh currently active question display
+            selectQuestion(selectedQuestionIndex);
+        }
+
+        function selectQuestion(qNum) {
+            selectedQuestionIndex = qNum;
+            const qData = questionDatabase[qNum];
+            
+            // Update active state of circular button
+            document.querySelectorAll('.q-ring-btn').forEach(btn => {
+                btn.classList.remove('scale-110', 'bg-sky-50', 'z-20');
+                btn.classList.add('scale-100', 'bg-white');
+            });
+            
+            const activeBtn = document.getElementById(`q-btn-${qNum}`);
+            if (activeBtn) {
+                activeBtn.classList.remove('scale-100', 'bg-white');
+                activeBtn.classList.add('scale-110', 'bg-sky-50', 'z-20');
+            }
+
+            // Update details block
+            document.getElementById('qa-badge').innerText = qData.badge;
+            document.getElementById('qa-badge').className = `w-8 h-8 rounded-full text-white font-fredoka flex items-center justify-center font-bold bg-${qNum === 1 ? 'amber' : qNum === 2 ? 'rose' : qNum === 3 ? 'purple' : qNum === 4 ? 'emerald' : 'indigo'}-500`;
+            document.getElementById('qa-question-title').innerText = qData.title;
+            
+            // Formatting friendly pollution type string
+            const pollutionTextMalay = selectedQAPollution === 'udara' ? 'Pencemaran Udara 💨' :
+                                       selectedQAPollution === 'air' ? 'Pencemaran Air 💧' :
+                                       selectedQAPollution === 'tanah' ? 'Pencemaran Tanah 🪱' :
+                                       selectedQAPollution === 'sungai' ? 'Pencemaran Sungai 🏞️' : 'Pencemaran Laut 🌊';
+                                       
+            document.getElementById('qa-context-text').innerText = `Fokus kajian semasa: ${pollutionTextMalay}`;
+            
+            // Load advice
+            document.getElementById('mascot-advice').innerText = qData.advice;
+
+            // Load interactive options for kids
+            const optionsContainer = document.getElementById('qa-options-container');
+            optionsContainer.innerHTML = '';
+            
+            const optionsList = qData.options[selectedQAPollution];
+            
+            optionsList.forEach((optionText, idx) => {
+                const btn = document.createElement('button');
+                btn.type = 'button';
+                btn.className = "w-full text-left p-3 rounded-xl border border-slate-200 hover:border-sky-400 hover:bg-sky-50/50 text-xs sm:text-sm transition-all duration-200 flex items-start gap-2.5";
+                
+                // If this option is already saved as current answer
+                const savedAns = reflectionAnswers[selectedQAPollution][qNum];
+                if (savedAns === optionText) {
+                    btn.className = "w-full text-left p-3 rounded-xl border-2 border-emerald-500 bg-emerald-50 text-emerald-950 font-semibold text-xs sm:text-sm transition-all duration-200 flex items-start gap-2.5";
+                }
+                
+                btn.innerHTML = `
+                    <span class="mt-0.5 w-5 h-5 rounded-full border border-slate-300 flex items-center justify-center text-[10px] font-bold bg-white text-slate-500 flex-shrink-0">${String.fromCharCode(65 + idx)}</span>
+                    <span>${optionText}</span>
+                `;
+                
+                btn.onclick = function() {
+                    selectPresetAnswer(optionText, btn);
+                };
+                
+                optionsContainer.appendChild(btn);
+            });
+
+            // Load custom written note if exists
+            const customNotesField = document.getElementById('qa-custom-notes');
+            // If the saved answer matches one of the presets, empty the text box. Otherwise if it's custom, load it
+            const currentSavedVal = reflectionAnswers[selectedQAPollution][qNum];
+            if (optionsList.includes(currentSavedVal)) {
+                customNotesField.value = '';
+            } else {
+                customNotesField.value = currentSavedVal;
+            }
+            
+            // Hide save alert
+            document.getElementById('qa-status').classList.add('hidden');
+        }
+
+        // When user clicks a preset option
+        function selectPresetAnswer(answerText, element) {
+            // Save inside answer sheet
+            reflectionAnswers[selectedQAPollution][selectedQuestionIndex] = answerText;
+            
+            // Re-render choices to update selected border style
+            selectQuestion(selectedQuestionIndex);
+            
+            // Give positive audio-visual reward (no points, just kid-friendly animation/feedback)
+            showMicroSuccess();
+        }
+
+        // Save manual custom text area
+        function saveAnswerNote() {
+            const customVal = document.getElementById('qa-custom-notes').value.trim();
+            if (customVal) {
+                reflectionAnswers[selectedQAPollution][selectedQuestionIndex] = customVal;
+            }
+            
+            // Show quick success status badge
+            const statusBadge = document.getElementById('qa-status');
+            statusBadge.classList.remove('hidden');
+            setTimeout(() => {
+                statusBadge.classList.add('hidden');
+            }, 2500);
+
+            showMicroSuccess();
+        }
+
+        function showMicroSuccess() {
+            // Change Mascot Advice dynamically to praise the kid
+            const praises = [
+                "Wah, jawapan yang sangat bernas! 🌟",
+                "Hebatnya otak kamu berfikir! Cikgu bangga! 🐢💚",
+                "Betul tu! Pemikiran cemerlang daripada Hero Bumi! 🌍",
+                "Idea yang menakjubkan! Teruskan menjawab soalan lain!",
+                "Sangat tepat! Bumi pasti gembira jika kita bertindak begini! 🙌"
+            ];
+            const randomPraise = praises[Math.floor(Math.random() * praises.length)];
+            document.getElementById('mascot-advice').innerText = randomPraise;
+        }
+
+        // Dynamic Name update for reward certificate
+        function updateCertName() {
+            const nameInput = document.getElementById('cert-kid-name').value;
+            // Clean/sanitized rendering
+            if (nameInput.trim() === '') {
+                // Keep default placeholder look
+            }
+        }
+
+        // Custom notification dialog instead of native browser alert()
+        function showSuccessFeedback() {
+            // Build simple overlay modal for kid
+            const modal = document.createElement('div');
+            modal.className = "fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4";
+            modal.id = "congrats-modal";
+            modal.innerHTML = `
+                <div class="bg-white rounded-3xl p-6 sm:p-8 max-w-sm w-full text-center border-4 border-emerald-400 shadow-2xl animate-bounce-short">
+                    <span class="text-6xl mb-2 inline-block">🎉</span>
+                    <h3 class="font-fredoka text-2xl text-emerald-800 font-bold mb-2">Taniah Hero Bumi!</h3>
+                    <p class="text-gray-600 text-sm mb-6">Kamu telah menamatkan keseluruhan aktiviti pembelajaran hari ini dengan cemerlang!</p>
+                    <button onclick="document.getElementById('congrats-modal').remove()" class="bg-emerald-500 hover:bg-emerald-600 text-white font-fredoka font-bold py-3 px-6 rounded-2xl w-full transition-all">
+                        Lihat Sijil Saya 📜
+                    </button>
+                </div>
+            `;
+            document.body.appendChild(modal);
+        }
+    </script>
+</body>
+</html>
